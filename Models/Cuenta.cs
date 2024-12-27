@@ -12,5 +12,6 @@ public class Cuenta
     [MaxLength(20)]
     public string NumeroCuenta { get; set; }
 
+
     public decimal Saldo { get; set; }
 }
