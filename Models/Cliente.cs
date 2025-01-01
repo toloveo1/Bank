@@ -7,11 +7,11 @@ public class Cliente
 
     [Required]
     [MaxLength(50)]
-    public string Nombre { get; set; }
+    public string? Nombre { get; set; }
 
     [Required]
     [MaxLength(50)]
-    public string Email { get; set; }
+    public string? Email { get; set; }
 
-    public ICollection<Cuenta> Cuentas { get; set; }
+    public ICollection<Cuenta>? Cuentas { get; set; }
 }

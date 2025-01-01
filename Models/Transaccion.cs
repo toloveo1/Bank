@@ -7,11 +7,11 @@ public class Transaccion
 
     [Required]
     public int CuentaId { get; set; }
-    public Cuenta Cuenta { get; set; }
+    public Cuenta Cuenta { get; set; } = new Cuenta();
 
     [Required]
     public decimal Monto { get; set; }
 
     public DateTime Fecha { get; set; }
-    public string Tipo { get; set; } // Depósito, Retiro, Transferencia
+    public string Tipo { get; set; } = string.Empty; // Depósito, Retiro, Transferencia
 }

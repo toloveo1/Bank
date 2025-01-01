@@ -1,9 +1,11 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Bank.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Bank.Controllers;
 
+[Authorize] // Aplica autorización a todo el controlador
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

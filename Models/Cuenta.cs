@@ -6,11 +6,11 @@ public class Cuenta
 
     [Required]
     public int ClienteId { get; set; }
-    public Cliente Cliente { get; set; }
+    public Cliente Cliente { get; set; } = new Cliente();
 
     [Required]
     [MaxLength(20)]
-    public string NumeroCuenta { get; set; }
+    public string? NumeroCuenta { get; set; }
 
 
     public decimal Saldo { get; set; }
