@@ -15,7 +15,7 @@ public class AccountController : Controller
     [HttpPost]
     public async Task<IActionResult> Login(string username, string password)
     {
-        // Aquí validación de usuario y contraseña simple
+        // Aquí validación de usuario y contraseña
         if (username == "admin" && password == "password")
         {
             var claims = new List<Claim>
@@ -23,11 +23,11 @@ public class AccountController : Controller
                 new Claim(ClaimTypes.Name, username)
             };
 
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var claimsIdentity = new ClaimsIdentity(claims, "CookieAuth");
             var authProperties = new AuthenticationProperties();
 
             await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
+                "CookieAuth",
                 new ClaimsPrincipal(claimsIdentity),
                 authProperties);
 

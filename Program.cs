@@ -7,19 +7,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<BankDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// aqui metemos las cookies para la autenticacion
+// aqui metemos las cookies
 builder.Services.AddAuthentication("CookieAuth")
     .AddCookie("CookieAuth", options =>
     {
-        options.LoginPath = "/Account/Login"; // aqui la ruta donde el usuario será redirigido si no está autenticado
+        options.LoginPath = "/Account/Login"; // aqui la ruta donde el usuario será redirigido si falla su acceso
     });
 
 // Agregar servicios de controladores
-builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configuración del pipeline HTTP
+// Configuración flujo HTTP
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -28,7 +28,7 @@ if (!app.Environment.IsDevelopment())
      if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    app.UseHsts(hsts => hsts.MaxAge(TimeSpan.FromDays(365)));
+    app.UseHsts(hsts => hsts.MaxAge(TimeSpan.FromDays(365))); //quitar comentario para darle func.
 }*/
 
     app.UseHsts();

@@ -2,21 +2,21 @@
     ViewData["Title"] = "Iniciar Sesión";
 }
 
-<h2>Iniciar Sesión</h2>
+<h2 class="text-center">Iniciar Sesión</h2>
 
-<form method="post" action="/Account/Login">
-    <div>
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required>
+<form method="post" action="/Account/Login" class="w-50 mx-auto mt-4">
+    <div class="mb-3">
+        <label for="username" class="form-label">Usuario:</label>
+        <input type="text" id="username" name="username" class="form-control" required>
     </div>
-    <div>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
+    <div class="mb-3">
+        <label for="password" class="form-label">Contraseña:</label>
+        <input type="password" id="password" name="password" class="form-control" required>
     </div>
-    <button type="submit">Acceso</button>
+    <button type="submit" class="btn btn-primary w-100">Acceso</button>
 </form>
 
 @if (ViewBag.Error != null)
 {
-    <p style="color: red;">@ViewBag.Error</p>
+    <p class="text-danger text-center mt-3">@ViewBag.Error</p>
 }
