@@ -34,7 +34,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection(); // quitar comentario para https, (salta warning en run)
 app.UseStaticFiles();
 
 app.UseRouting();

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Bank.Controllers;
 
-[Authorize] // Aplica autorización a todo el controlador
+[Authorize] // Autorizamos TODO el controlador
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
