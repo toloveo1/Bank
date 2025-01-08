@@ -1,3 +1,5 @@
+//esta pagina para gestion de inicio y cierre de sesion
+
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;

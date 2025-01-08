@@ -1,0 +1,23 @@
+@model IEnumerable<Bank.Models.Cliente>
+
+<h1>Clientes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.Nombre</td>
+                <td>@cliente.Email</td>
+                <td>@cliente.Telefono</td>
+            </tr>
+        }
+    </tbody>
+</table>

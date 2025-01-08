@@ -1,3 +1,5 @@
+//esta pagina para indice y privaciad
+
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Bank.Models;
@@ -17,7 +19,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        return RedirectToAction("Index", "Clientes");
     }
 
     public IActionResult Privacy()
